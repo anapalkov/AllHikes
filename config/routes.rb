@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get "/myprofile", to: "users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  
+  resources :comments, only: [:create, :index, :show]
+
+  # delete 'comments', to: 'comments#destroy'
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
