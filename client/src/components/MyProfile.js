@@ -5,7 +5,7 @@ function MyProfile({currentUser}) {
     const [hikes, setHikes] = useState([])
     useEffect(() => {
         async function fetchHikes() {
-            const res = await fetch(`http://localhost:3000/users/${currentUser.id}`)
+            const res = await fetch(`https://all-hike.herokuapp.com/users/${currentUser.id}`)
             if(res.ok) {
                 const currentUser = await res.json()
                 setHikes(currentUser.user_hikes)     

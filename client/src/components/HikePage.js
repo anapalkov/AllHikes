@@ -11,7 +11,7 @@ function HikePage() {
 
   // ==================================== FETCH HIKES PAGE FROM BACKEND
   useEffect(() => {
-    fetch(`http://localhost:3000/hikes/${id}`)
+    fetch(`https://all-hike.herokuapp.com/hikes/${id}`)
       .then((r) => r.json())
       .then((hike) => {
         setHike(hike);
@@ -27,7 +27,7 @@ function HikePage() {
       hike_id: id,
       content: comment
     }
-    const res = await fetch(`http://localhost:3000/comments`, {
+    const res = await fetch(`https://all-hike.herokuapp.com/comments`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
@@ -41,7 +41,7 @@ function HikePage() {
 
   // ==================================== HANDLE DELETE
   async function handleDelete(commentId) {
-    const res = await fetch(`http://localhost:3000/comments/${commentId}`
+    const res = await fetch(`https://all-hike.herokuapp.com/comments/${commentId}`
       , { method: 'DELETE' })
     const json = await res.json()
     // console.log(json.id)
@@ -60,7 +60,7 @@ function HikePage() {
       user_id: 1,
       hike_id: id,
     }
-    const res = await fetch(`http://localhost:3000/trips`, {
+    const res = await fetch(`https://all-hike.herokuapp.com/trips`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"

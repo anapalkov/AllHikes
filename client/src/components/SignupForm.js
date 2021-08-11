@@ -16,7 +16,7 @@ function SignupForm({setCurrentUser}) {
       password
     }
     console.log(user)
-    const res = await fetch('http://localhost:3000/users',{ 
+    const res = await fetch('https://all-hike.herokuapp.com/users',{ 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -21,7 +21,7 @@ function Map() {
 const [hikeData, setHikes] = useState([])
 useEffect(() => {
     async function fetchHikes() {
-        const res = await fetch('http://localhost:3000/hikes')
+        const res = await fetch('https://all-hike.herokuapp.com/hikes')
         if(res.ok) {
             const data = await res.json()
             setHikes(data)
